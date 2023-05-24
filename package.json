@@ -1,0 +1,23 @@
+{
+  "name": "lab_website",
+  "version": "1.0.0",
+  "description": "This is the code for the site for the Human Behavior Modeling Lab at SUNY Buffalo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hbmlabatub/hbmlabatub.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hbmlabatub/hbmlabatub.github.io/issues"
+  },
+  "homepage": "https://github.com/hbmlabatub/hbmlabatub.github.io#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  }
+}
