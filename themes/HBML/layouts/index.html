@@ -1,3 +1,11 @@
 {{ partial "head.html"}}
 
+
 {{ partial "header.html" }}
+
+
+{{ partial "carousel.html"}}
+
+{{ $carousel_js := resources.Get "js/carousel.js" | js.Build "main.js"}}
+<script src="{{ $carousel_js.RelPermalink}}"></script>
+{{ partial "footer.html"}}
