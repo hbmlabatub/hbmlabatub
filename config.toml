@@ -1,4 +1,4 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'HBML'
-theme = 'HBML'
+theme = 'hugo-resume'
