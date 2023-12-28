@@ -33,9 +33,11 @@
   <a class="navbar-brand js-scroll-trigger" href="#page-top">
     <span class="d-block d-lg-none">{{ .Site.Params.firstName }} {{ .Site.Params.lastName }}</span>
     <span class="d-none d-lg-block">
-      <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ .Site.Params.profileImage | relURL }}"
-        alt="">
+    {{ with .Resources.GetMatch "profile" }}
+      <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="data:{{ .MediaType.Type }};base64,{{ .Content | base64Encode }}" alt="">
+    {{ end }}
     </span>
+    
   </a>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav">
