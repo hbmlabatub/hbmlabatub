@@ -1,10 +1,14 @@
-{{ define "main" }}
-{{ partial "peopleNav.html" .}}
-<section class="resume-section p-3 p-lg-5 d-flex d-column" id="{{ replace .Title " " " -" }}">
-  <div class="my-auto">
-    <h1 class="mb-0"><span class="text-primary">{{ .Title }}</span></h1>
-    {{ .Content }}
-  </div>
+{{ define "main" }} {{ partial "peopleNav.html" .}}
+{{$author := .Title }}
+<section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+  {{ partial "about.html" .}}
+</section>
+<section class="resume-section p-3 p-lg-5 d-flex d-column" id="publications">
+  {{ range where .Site.RegularPages "Section" "publications"}} 
+    {{ if strings.Contains (.Param "authors") $author}}
+      {{ partial "people/publication.html" .}}
+    {{ end }}
+  {{ end }}
 </section>
 <!-- <div class="container mt-5"> -->
 <!--   <div class="row d-flex justify-content-center"> -->

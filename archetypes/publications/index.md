@@ -1,6 +1,7 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: 2018-01-01
+authors: "Author 1, Author 2, Author 3"
 pubtype: "Talk,Article,Etc"
 featured: true
 description: "Text used in summary on main page"
