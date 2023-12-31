@@ -11,6 +11,9 @@ handles:
   github:
     link: https://github.com/<Your Username here>
     name: GitHub
+  email:
+    link: mailto:<Your email>
+    name: Email
 
 resources:
   - src: profile.jpg
