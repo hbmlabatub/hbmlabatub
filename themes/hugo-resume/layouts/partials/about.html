@@ -1,6 +1,33 @@
 <div class="my-auto">
   <h1 class="mb-0"><span class="text-primary">{{ .Title }}</span></h1>
   {{ .Content }}
+  <ul class="list-inline list-social-icons mb-0">
+    {{ range $social, $handle := .Params.handles }} 
+    <li class="list-inline-item">
+      <a
+        href="{{ $handle.link }}"
+        data-toggle="tooltip"
+        title="{{ $handle.name }}"
+        data-offset="0,10"
+        rel="me"
+      >
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          {{if ne $handle.name "Email" }}
+          <i
+            class="fab {{ if .icon}}fa-{{ .icon }}{{ else }}fa-{{ lower $handle.name }}{{ end }} fa-stack-1x fa-inverse"
+          ></i>
+          {{else}}
+          <!-- The Email icon is a bit special for some reason -->
+          <i
+            class="fa {{ if .icon}}fa-{{ .icon }}{{ else }}fa-envelope{{ end }} fa-stack-1x fa-inverse"
+          ></i>
+          {{end}}
+        </span>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
 </div>
 
 <!-- <div class="my-auto"> -->
