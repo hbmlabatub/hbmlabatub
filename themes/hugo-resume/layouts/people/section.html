@@ -3,11 +3,13 @@
   <div class="my-auto" id="projects-content">
     <h1 id="{{ urlize .Title }}">{{ .Title }}</h1>
     <p>{{ .Content }}</p>
+    <div class="container mt-4">
     {{ range .Data.Pages.ByWeight }}
       {{ if ne .Type "markdown" }}
         {{ partial (printf "%s%s" .Type "Summary") . }}
       {{ end }}
     {{ end }}
+    </div>
   <!--   {{ range .Sections }} -->
   <!--   <h2 id="{{ urlize .Title }}"> -->
   <!--     <a href="{{ .Permalink }}">{{ .Title }}</a> -->

@@ -15,6 +15,9 @@ handles:
   email:
     link: mailto:<Your email>
     name: Email
+  google-scholar:
+    link: https://scholar.google.com/<Your link here>
+    name: Google Scholar
 
 resources:
   - src: profile.jpg
