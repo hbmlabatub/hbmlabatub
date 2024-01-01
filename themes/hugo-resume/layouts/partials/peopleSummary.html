@@ -1,12 +1,25 @@
+<!-- This represents the summary on the people page for each person -->
+<!-- <div class="resume-item d-flex flex-column flex-md-row mb-5"> -->
+<!--   <div class="publication-content mr-auto"> -->
+<!--     <h3 class="mb-0">{{ .Params.pubtype }} - <a href="{{ .Permalink }}">{{ .Params.title }}</a></h3> -->
+<!--     <div>{{ .Params.description | safeHTML }}</div> -->
+<!--     <p>{{ partial "techtags" . }}</p> -->
+<!--   </div> -->
+<!--   <div class="resume-date text-md-right"> -->
+<!--     <span class="text-primary">{{ .Params.date | dateFormat "January 2006" }}</span> -->
+<!--     <img src="{{ .Params.image }}" style="max-width:250px;padding:5px;"/> -->
+<!--   </div> -->
+<!-- </div> -->
 
-<div class="resume-item d-flex flex-column flex-md-row mb-5">
-  <div class="publication-content mr-auto">
-    <h3 class="mb-0">{{ .Params.pubtype }} - <a href="{{ .Permalink }}">{{ .Params.title }}</a></h3>
-    <div>{{ .Params.description | safeHTML }}</div>
-    <p>{{ partial "techtags" . }}</p>
-  </div>
-  <div class="resume-date text-md-right">
-    <span class="text-primary">{{ .Params.date | dateFormat "January 2006" }}</span>
-    <img src="{{ .Params.image }}" style="max-width:250px;padding:5px;"/>
-  </div>
+<div class="col-4">
+  {{ with .Resources.GetMatch "profile"  }}
+  <a href="{{ $.Permalink }}">
+  <figure class="figure">
+    <img src="{{ .RelPermalink }}" class="figure-img img-fluid rounded img_thumbnail" alt="A generic square placeholder image with rounded corners in a figure.">
+    <figcaption class="figure-caption text-center">{{$.Title}}</figcaption>
+    <figcaption class="figure-caption text-center">{{humanize $.Params.year}} year</figcaption>
+  </a>
+  {{end}}
+  
+</figure>
 </div>
