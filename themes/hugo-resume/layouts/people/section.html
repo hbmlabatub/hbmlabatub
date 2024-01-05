@@ -3,12 +3,14 @@
   <div class="my-auto" id="projects-content">
     <h1 id="{{ urlize .Title }}">{{ .Title }}</h1>
     <p>{{ .Content }}</p>
-    {{range .Sections}}
+    {{range $curr_seq := .Sections}}
+    {{$curr_seq_name := $curr_seq.LinkTitle}}
     {{if gt (len .Data.Pages.ByWeight) 0}}
     <section class="resume-section p-3 p-lg-5 d-flex flex-column">
       <h2>{{.Name}}</h2>
     <div class="container mt-4">
       {{ range .Data.Pages.ByWeight }} 
+    {{ .Scratch.Set "curr_seq_name" $curr_seq_name}}
         {{ partial "peopleSummary" . }} 
       {{ end }}
     </div>
