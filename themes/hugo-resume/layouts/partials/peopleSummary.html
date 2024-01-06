@@ -28,7 +28,7 @@
       {{else}}
       <figcaption class="figure-caption text-center">Senior</figcaption>
       {{end}}
-    {{else if eq (strings.ToLower $curr_seq_name) "faculty"}}
+    {{else if eq $curr_seq_name "faculty"}}
       <figcaption class="figure-caption text-center">{{$.Params.job_title}}</figcaption>
     {{else}}
       <figcaption class="figure-caption text-center">{{humanize $.Params.year}} year</figcaption>
