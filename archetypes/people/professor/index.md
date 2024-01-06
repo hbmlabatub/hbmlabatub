@@ -1,7 +1,7 @@
 ---
 title: "{{ replace .File.ContentBaseName `-` ` ` | title }}"
 date: 2018-02-10T18:56:13-05:00
-year: <Year of your program>
+job_title: <Official title (Associate Professor, Professor, etc)>
 sitemap:
   priority: 1.0
 
