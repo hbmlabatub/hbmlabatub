@@ -10,7 +10,7 @@
       <h2>{{.Name}}</h2>
     <div class="container mt-4">
       {{ range .Data.Pages.ByWeight }} 
-    {{ .Scratch.Set "curr_seq_name" $curr_seq_name}}
+    {{ .Scratch.Set "curr_seq_name" (strings.ToLower $curr_seq_name)}}
         {{ partial "peopleSummary" . }} 
       {{ end }}
     </div>
