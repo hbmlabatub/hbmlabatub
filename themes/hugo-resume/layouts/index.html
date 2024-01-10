@@ -1,5 +1,11 @@
 {{ define "main" }}
-   {{ partial "about.html" .}}
+{{ partial "breadcrumbs" .}}
+   <div class="my-auto">
+  <h1 class="mb-0">{{ .Title }}</h1>
+  {{ .Content }}
+  </h1>
+  </div>
+
    {{ $projects := slice "creations" "contributions" }}
    {{ $sections := slice "publications" "blog" }}
    {{ $site := .Site }}
