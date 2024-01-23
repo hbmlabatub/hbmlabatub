@@ -1,0 +1,32 @@
+{{define "main"}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+
+<section class="resume-section p-3 p-lg-5 d-flex d-column" id="publications">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center my-2">
+        <h2 class="mb-0">
+          <span class="text-primary">Fun Times in the Lab</span>
+        </h2>
+      </div>
+    </div>
+    <div class="portfolio-item row">
+      {{ $images := (.Page.Resources.Match "*.jpg")}}
+      {{ $sorted := sort $images "Exif.Date" "desc"}}
+      {{- range $index, $img := $sorted}}
+      <div class="item col-lg-3 col-md-4 col-6 col-sm">
+        <a href="{{.RelPermalink}}"
+          class="fancylight popup-btn" data-fancybox-group="light">
+          <img class="img-fluid"
+            src="{{.RelPermalink}}"
+            alt="" />
+        </a>
+      </div>
+
+      {{end}}
+          </div>
+  </div>
+</section>
+{{ end }}
