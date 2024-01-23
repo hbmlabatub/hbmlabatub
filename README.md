@@ -13,6 +13,7 @@ hugo server -D
    1. [Create People](#create_people)
    2. [Add Profile Picture](#profile_pic)
    3. [Update Info](#update_info)
+2. [Adding Gallery Images](#add_gallery)
 
 # Adding People <a name="add_people"></a>
 
@@ -45,3 +46,8 @@ To add your profile picture, just add profile.jpg to this folder.
 To update your information, just update the index.md file that was created.
 Update the variables and the text at the bottom, which should update your personal page
 without any effort.
+
+## Add Gallery Photos <a name="add_gallery"></a>
+
+To add photos to the gallery, just add them into the gallery folder.
+It works best if images are horizontal rather than vertical.
